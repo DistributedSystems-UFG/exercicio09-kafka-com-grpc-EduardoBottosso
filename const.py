@@ -1,0 +1,8 @@
+BROKER_ADDR = "3.83.249.16"
+BROKER_PORT = "9092"
+
+TOPICO_MEDIDAS = "medidasDeTemperatura"
+TOPICO_ALERTAS = "alertasDeTemperatura"
+
+GRPC_HOST = "0.0.0.0"
+GRPC_PORT = "50051"

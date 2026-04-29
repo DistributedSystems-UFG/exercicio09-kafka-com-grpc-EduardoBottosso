@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package temperatura;
+
+service TemperaturaService {
+  rpc ObterUltimoAlerta (ConsultaAlertaRequest) returns (AlertaResponse);
+  rpc ListarAlertas (ConsultaAlertaRequest) returns (ListaAlertasResponse);
+}
+
+message ConsultaAlertaRequest {
+  string sensor_id = 1;
+}
+
+message AlertaResponse {
+  string sensor_id = 1;
+  double temperatura = 2;
+  double variacao = 3;
+  string unidade = 4;
+  string classificacao = 5;
+  bool alerta = 6;
+  string mensagem = 7;
+  string timestamp = 8;
+}
+
+message ListaAlertasResponse {
+  repeated AlertaResponse alertas = 1;
+}
