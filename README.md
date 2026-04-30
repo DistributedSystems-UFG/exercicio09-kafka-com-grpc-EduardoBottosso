@@ -38,6 +38,29 @@ KAFKA:
   Run the Client on another machine
   python3 consumer <topic_name>
 
-
-
+GRPC:
+  1) Install PIP
+  $:> sudo apt install python3-pip
+  
+  2) Upgrade PIP
+  $:> python3 -m pip install --upgrade pip
+  
+  3) Install gRPC runtime
+  $:> python3 -m pip install grpcio
+  
+  4) Install gRPC tools
+  $:> python3 -m pip install grpcio-tools
+  
+  $:> cd python
+  
+  $:> python3 -m grpc_tools.protoc -I../protos --python_out=. --grpc_python_out=. ../protos/EmployeeService.proto
+  
+  7) Run the example (using two differente machines)
+  On the first machine:
+  $:> python3 EmployeeService.py
+  
+  On the second machine:
+  $:> python3 EmployeeClient.py
+  
+  Note: open port 50051 on the firewall at EC2 (security group)
   
